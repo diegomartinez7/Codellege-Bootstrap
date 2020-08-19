@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook</title>
+    <link rel="icon" href="Pract_8_img/fb_icon_new.png" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/pract_8_styles.css" media="screen">
+
+    <!-- Bootstrap y Fontawesome -->
+    <link rel="stylesheet" href="./bootstrap-4.5.2-dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/78e29341ce.js" crossorigin="anonymous"></script>
+</head>
+
+<!-- Cambiamos el fondo del body para contrastar con el navbar -->
+<body class="bg-custom">
+
+    <!-- Barra de navegación de facebook -->
+    <div class="navbar navbar-expand-lg navbar-white bg-white pt-1 pb-1 shadow-sm sticky-top">
+        <!-- Flecha para quitar la selección del cuadro de búsqueda -->
+        <i class="fas fa-arrow-left mr-2" id="flecha-izq" onclick="clickCuerpo()"></i>
+        
+        <a href="" class="navbar-brand mr-2"><img src="Pract_8_img/fb_icon_new.png" alt="Icono de facebook" class="icono"></a>
+        <!-- Contenedor para juntar el icono de búsqueda con la input de tipo search -->
+        <form class="form-inline cont-busqueda">
+            <i class="fas fa-search text-secondary" id="lupa"></i><input type="search" class="busqueda p-2" placeholder="Buscar en Facebook" name="caja">
+        </form>
+        
+        <!-- Iconos centrales del navbar -->
+        <div class="menu_icons nav-item">
+            <!-- Cada icono tiene su propio tooltip -->
+            <i class="fas fa-home btn-link text-primary" data-toggle="tooltip" title="Inicio" data-placement="bottom"></i>
+            <i class="fab fa-youtube nav-link text-secondary" data-toggle="tooltip" title="Watch" data-placement="bottom"></i>
+            <i class="fas fa-store nav-link text-secondary" data-toggle="tooltip" title="Marketplace" data-placement="bottom"></i>
+            <i class="fas fa-users nav-link text-secondary" data-toggle="tooltip" title="Grupos" data-placement="bottom"></i>
+            <i class="fas fa-vector-square nav-link text-secondary" data-toggle="tooltip" title="Videojuegos" data-placement="bottom"></i>
+        </div>
+        
+        <!-- Botón del perfil del usuario -->
+        <button class="btn_account mr-2"><img src="Pract_8_img/foto_perfil.jpg" class="icono"> Diego</button>
+        <div>
+            <!-- Botones extra de la cuenta con su propio tooltip -->
+            <button class="fas fa-plus btn_icon" data-toggle="tooltip" title="Crear" data-placement="bottom"></button>
+            <button class="fab fa-facebook-messenger btn_icon" data-toggle="tooltip" title="Messenger" data-placement="bottom"></button>
+            <button class="fas fa-bell btn_icon" data-toggle="tooltip" title="Notificaciones" data-placement="bottom"></button>
+            <button class="fas fa-caret-down btn_icon" data-toggle="tooltip" title="Cuenta" data-placement="bottom"></button>
+        </div>
+    </div>
+
+    <!-- Contenedor para las 3 secciones -->
+    <div class="col-12 d-flex p-0">
+        <div class="col-3 pt-3" id="columna_izq">
+            <button class="text-left p-2 w-75"><img src="Pract_8_img/foto_perfil.jpg" class="icono mr-2"> Diego Daymon</button>
+            <button class="text-left p-2 w-75"><img src="Pract_8_img/page_icon.png" class="icono_cuadrado mr-2"> Páginas</button>
+            <button class="text-left p-2 w-75"><img src="Pract_8_img/friends_icon.png" class="icono_cuadrado mr-2"> Amigos</button>
+            <button class="text-left p-2 w-75"><img src="Pract_8_img/messenger_icon.png" class="icono_cuadrado mr-2"> Messenger</button>
+            <button class="text-left p-2 w-75"><img src="Pract_8_img/fundraiser_icon.png" class="icono_cuadrado mr-2"> Recaudaciones de fondos</button>
+            <button class="text-left p-2 w-75"><img src="Pract_8_img/marketplace_icon.png" class="icono_cuadrado mr-2"> Marketplace</button>
+            <button class="text-left p-2 w-75"><img src="Pract_8_img/videos_icon.png" class="icono_cuadrado mr-2"> Videos</button>
+            <button class="text-left p-2 w-75"><img src="Pract_8_img/egg_icon.png" class="icono_cuadrado mr-2"> Easter Eggs</button>
+            <!-- Aquí irán las otras opciones con display: none, para aparecer al presionar Ver más (que ahora está en none y reemplazado por ver menos o algo así) -->
+            <button class="text-left p-2 w-75"><a class="fas fa-chevron-down mr-2" id="verMas"></a> Ver más</button>
+            <hr class="w-75 float-left">
+            <div>
+                <p class="float-left font-secciones mb-1">Tus accesos directos</p>
+                <button class="text-left p-2 w-75"><img src="Pract_8_img/arkham_perfil.jpg" class="icono mr-2"> Batman Arkham News</button>
+                <button class="text-left p-2 w-75"><img src="Pract_8_img/rhcp_perfil.jpg" class="icono mr-2"> Red Hot Chili Peppers</button> 
+            </div>
+
+            <div class="w-75">
+                <p>Privacidad · Condiciones · Publicidad · Opciones de anuncios</p>
+            </div>
+        </div>
+        <!-- Contenedor del tamaño de la columna izquierda que está en el z-index del contenedor central, permitiendo que mr-auto ayude a centrar al div de contenido (publicaciones) -->
+        <div class="col-3 mr-auto"></div>
+
+        <div class="col-5 ">
+            <div class="ml-auto pl-5 pr-5 pb-5 pt-4 text-justify">
+                <!-- Panel de historias recientes de contactos -->
+                <div class="d-flex mb-2" id="historias">
+                    <!-- Card que contendrá la imagen de la historia, del perfil del contacto y su nombre -->
+                    <div class="card">
+                        <img src="Pract_8_img/kevin_story.jpg">
+                        <!-- Se utiliza card-img-overlay para colocar elementos encima de la imagen -->
+                        <div class="card-img-overlay">
+                            <img src="Pract_8_img/kevin_conroy_perfil.jpg" class="icono_historia border-light">
+                            <span>Kevin Conroy</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="Pract_8_img/hugh_story.jpg">
+                        <div class="card-img-overlay">
+                            <img src="Pract_8_img/hugh_jackman_perfil.jpg" class="icono_historia">
+                            <span>Hugh Jackman</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="Pract_8_img/mark_story.jpg">
+                        <div class="card-img-overlay">
+                            <img src="Pract_8_img/mark_hamill_perfil.jpg" class="icono_historia">
+                            <span>Mark Hamill</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="Pract_8_img/jennifer_story.jpg">
+                        <div class="card-img-overlay">
+                            <img src="Pract_8_img/jennifer_aniston_perfil.jpg" class="icono_historia">
+                            <span>Jennifer Aniston</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="Pract_8_img/juan_story.jpg">
+                        <div class="card-img-overlay">
+                            <img src="Pract_8_img/juan_esteban_perfil.jpg" class="icono_historia">
+                            <span>Juan Esteban</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección para hacer una publicación -->
+                <div class="bg-white p-3 mb-3" id="publicar">
+                    <div class="d-flex">
+                        <img src="Pract_8_img/foto_perfil.jpg" class="icono_publicacion mr-2">
+                        <!-- Input para escribir la publicación nueva -->
+                        <input type="text" class="form-control" placeholder="¿Qué estás pensando, Diego?">
+                    </div>
+                    <hr>
+                    <!-- Botones para el tipo de publicación -->
+                    <div class="d-flex">
+                        <button class="col-4"><i class="fas fa-video text-danger"></i> Video en vivo</button>
+                        <button class="col-4"><i class="fas fa-image text-success"></i> Foto/video</button>
+                        <button class="col-4"><i class="fas fa-smile text-warning"></i> Sentimiento/actividad</button>
+                    </div>
+                </div>
+
+                <!-- Sección de publicaciones -->
+                <!-- Card para contener toda la publicación -->
+                <div class="card">
+                    <!-- Cabecera donde están los datos sobre la publicación -->
+                    <div class="card-header pl-3 pb-0 pr-4 bg-white">
+                        <div class="d-flex ">
+                            <img src="Pract_8_img/lauren_german_perfil.jpg" class="icono_publicacion mt-1">
+                            <!-- Contenedor para comodar correctamente la imagen con el nombre y la hora de publicación -->
+                            <div>
+                                <p class="font-weight-bold">Lauren German <small class="d-block">30 min <i class="fas fa-user-friends text-secondary"></i></small></p>
+                            </div>
+                            <i class="fas fa-ellipsis-h ml-auto text-right text-muted pt-3"></i>
+                        </div>
+                    </div>
+                    <!-- Imagen/Video de la publicación -->
+                    <img src="Pract_8_img/lauren_publication.jpg" class="card-img-top">
+                    <!-- Cuerpo donde están los botones para hacer diferentes cosas con la publicación -->
+                    <div class="card-body pt-1 pb-2 bg-white">
+                        <div class="d-flex">
+                            <button class="col-4"><i class="far fa-thumbs-up"></i> Me gusta</button>
+                            <button class="col-4"><i class="far fa-comment-alt"></i> Comentar</button>
+                            <button class="col-4"><i class="fas fa-share"></i> Compartir</button>
+                        </div>
+                        <!-- Comentarios -->
+                        <hr>
+                        <div class="d-flex">
+                            <img src="Pract_8_img/foto_perfil.jpg" class="icono mr-2">
+                            <!-- Caja de texto para hacer el comentario -->
+                            <input type="text" class="w-100" placeholder="Escribe un comentario...">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <!-- Cabecera  -->
+                    <div class="card-header pl-3 pb-0 pr-4 bg-white">
+                        <div class="d-flex">
+                            <img src="Pract_8_img/luke_wilson_perfil.jpg" class="icono_publicacion mt-1">
+                            <div>
+                                <p class="font-weight-bold">Luke Wilson <small class="d-block">2 h <i class="fas fa-user-friends text-secondary"></i></small></p>
+                            </div>
+                            <i class="fas fa-ellipsis-h ml-auto text-right text-muted pt-3"></i>
+                        </div>
+                        <p class="mb-2">Prove me wrong</p>
+                    </div>
+                    <!-- Imagen/Video -->
+                    <img src="Pract_8_img/luke_publication.jpg" class="card-img-top">
+                    <!-- Cuerpo  -->
+                    <div class="card-body pt-1 pb-2 bg-white">
+                        <div class="d-flex">
+                            <button class="col-4"><i class="far fa-thumbs-up"></i> Me gusta</button>
+                            <button class="col-4"><i class="far fa-comment-alt"></i> Comentar</button>
+                            <button class="col-4"><i class="fas fa-share"></i> Compartir</button>
+                        </div>
+                        <hr>
+                        <div class="d-flex">
+                            <img src="Pract_8_img/foto_perfil.jpg" class="icono mr-2">
+                            <input type="text" class="w-100" placeholder="Escribe un comentario...">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <!-- Cabecera  -->
+                    <div class="card-header pl-3 pb-0 pr-4 bg-white">
+                        <div class="d-flex">
+                            <img src="Pract_8_img/juan_esteban_perfil.jpg" class="icono_publicacion mt-1">
+                            <div>
+                                <p class="font-weight-bold">Juan Esteban Aristizábal V <small class="d-block">4 h <i class="fas fa-user-friends text-secondary"></i></small></p>
+                            </div>
+                            <i class="fas fa-ellipsis-h ml-auto text-right text-muted pt-3"></i>
+                        </div>
+                        <p class="mb-2">Jaja, siempre lo mismo raza</p>
+                    </div>
+                    <!-- Imagen/Video -->
+                    <video src="Pract_8_img/video_1_publicacion.mp4" class="card-img-top" controls>
+                    <!-- Cuerpo  -->
+                    <div class="card-body pt-1 pb-2 bg-white">
+                        <div class="d-flex">
+                            <button class="col-4"><i class="far fa-thumbs-up"></i> Me gusta</button>
+                            <button class="col-4"><i class="far fa-comment-alt"></i> Comentar</button>
+                            <button class="col-4"><i class="fas fa-share"></i> Compartir</button>
+                        </div>
+                        <hr>
+                        <div class="d-flex">
+                            <img src="Pract_8_img/foto_perfil.jpg" class="icono mr-2">
+                            <input type="text" class="w-100" placeholder="Escribe un comentario...">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <!-- Cabecera  -->
+                    <div class="card-header pl-3 pb-0 pr-4 bg-white">
+                        <div class="d-flex">
+                            <img src="Pract_8_img/drake_bell_perfil.jpg" class="icono_publicacion mt-1">
+                            <div>
+                                <p class="font-weight-bold">Drake Bell <small class="d-block">4 h <i class="fas fa-user-friends text-secondary"></i></small></p>
+                            </div>
+                            <i class="fas fa-ellipsis-h ml-auto text-right text-muted pt-3"></i>
+                        </div>
+                        <p class="mb-2">Un poco de humor</p>
+                    </div>
+                    <!-- Imagen/Video -->
+                    <video src="Pract_8_img/video_2_publicacion.mp4" class="card-img-top" controls>
+                    <!-- Cuerpo  -->
+                    <div class="card-body pt-1 pb-2 bg-white">
+                        <div class="d-flex">
+                            <button class="col-4"><i class="far fa-thumbs-up"></i> Me gusta</button>
+                            <button class="col-4"><i class="far fa-comment-alt"></i> Comentar</button>
+                            <button class="col-4"><i class="fas fa-share"></i> Compartir</button>
+                        </div>
+                        <hr>
+                        <div class="d-flex">
+                            <img src="Pract_8_img/foto_perfil.jpg" class="icono mr-2">
+                            <input type="text" class="w-100" placeholder="Escribe un comentario...">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <!-- Cabecera  -->
+                    <div class="card-header pl-3 pb-0 pr-4 bg-white">
+                        <div class="d-flex">
+                            <img src="Pract_8_img/drake_bell_perfil.jpg" class="icono_publicacion mt-1">
+                            <div>
+                                <p class="font-weight-bold">Drake Bell <small class="d-block">10 h <i class="fas fa-user-friends text-secondary"></i></small></p>
+                            </div>
+                            <i class="fas fa-ellipsis-h ml-auto text-right text-muted pt-3"></i>
+                        </div>
+                        <p class="mb-2">¿El Santo o Blue Demon?</p>
+                    </div>
+                    <!-- Cuerpo  -->
+                    <div class="card-body pt-1 pb-2 bg-white">
+                        <div class="d-flex">
+                            <button class="col-4"><i class="far fa-thumbs-up"></i> Me gusta</button>
+                            <button class="col-4"><i class="far fa-comment-alt"></i> Comentar</button>
+                            <button class="col-4"><i class="fas fa-share"></i> Compartir</button>
+                        </div>
+                        <hr>
+                        <div class="d-flex">
+                            <img src="Pract_8_img/foto_perfil.jpg" class="icono mr-2">
+                            <input type="text" class="w-100" placeholder="Escribe un comentario...">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <!-- Cabecera  -->
+                    <div class="card-header pl-3 pb-0 pr-4 bg-white">
+                        <div class="d-flex">
+                            <img src="Pract_8_img/vincent_d_onofrio_perfil.jpg" class="icono_publicacion mt-1">
+                            <div>
+                                <p class="font-weight-bold">Vincent D'Onofrio <small class="d-block">11 h <i class="fas fa-user-friends text-secondary"></i></small></p>
+                            </div>
+                            <i class="fas fa-ellipsis-h ml-auto text-right text-muted pt-3"></i>
+                        </div>
+                        <p class="mb-2">Still got some business with you</p>
+                    </div>
+                    <!-- Imagen/Video -->
+                    <img src="Pract_8_img/vincent_publication.jpg" class="card-img-top">
+                    <!-- Cuerpo  -->
+                    <div class="card-body pt-1 pb-2 bg-white">
+                        <div class="d-flex">
+                            <button class="col-4"><i class="far fa-thumbs-up"></i> Me gusta</button>
+                            <button class="col-4"><i class="far fa-comment-alt"></i> Comentar</button>
+                            <button class="col-4"><i class="fas fa-share"></i> Compartir</button>
+                        </div>
+                        <hr>
+                        <div class="d-flex">
+                            <img src="Pract_8_img/foto_perfil.jpg" class="icono mr-2">
+                            <input type="text" class="w-100" placeholder="Escribe un comentario...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-3 ml-auto">
+            <div class="pt-3 text-right" id="columna_der" style="overflow:auto; max-height:calc(100% - 3.75em);">
+                <p class="font-secciones w-75 text-left float-right mb-1 pl-2">Cumpleaños</p>
+                <button class="text-left p-2">
+                    <img src="Pract_8_img/present_icon.png" class="icono_cuadrado mr-2">
+                    <span> Hoy es el cumpleaños de <strong>James Howlett</strong>.</span>
+                </button>
+                <hr class="w-75 float-right mt-2">
+                <div>
+                    <p class="font-secciones w-75 text-left float-right mb-1 pl-2">Contactos</p>
+                    <button class="text-left p-2 w-75 float-right"><img src="Pract_8_img/ioan_gruffudd_perfil.jpg" class="icono mr-2"> Ioan Gruffudd</button>
+                    <button class="text-left p-2 w-75 float-right"><img src="Pract_8_img/liam_neeson_perfil.jpg" class="icono mr-2"> Liam Neeson</button>
+                    <button class="text-left p-2 w-75 float-right"><img src="Pract_8_img/crystal_reed_perfil.jpg" class="icono mr-2"> Crystal Reed</button>
+                    <button class="text-left p-2 w-75 float-right"><img src="Pract_8_img/hugh_jackman_perfil.jpg" class="icono mr-2"> Hugh Jackman</button>
+                    <button class="text-left p-2 w-75 float-right"><img src="Pract_8_img/julieta_venegas_perfil.jpg" class="icono mr-2"> Julieta Venegas</button>
+                    <button class="text-left p-2 w-75 float-right"><img src="Pract_8_img/kevin_conroy_perfil.jpg" class="icono mr-2"> Kevin Conroy</button>
+                    <button class="text-left p-2 w-75 float-right"><img src="Pract_8_img/mark_hamill_perfil.jpg" class="icono mr-2"> Mark Hamill</button>
+                    <button class="text-left p-2 w-75 float-right"><img src="Pract_8_img/luke_wilson_perfil.jpg" class="icono mr-2"> Luke Wilson</button>
+                    <button class="text-left p-2 w-75 float-right"><img src="Pract_8_img/keira_knightley_perfil.jpg" class="icono mr-2"> Keira Knightley</button>
+                    <button class="text-left p-2 w-75 float-right"><img src="Pract_8_img/gwen_stefani_perfil.jpg" class="icono mr-2"> Gwen Stefani</button>
+                    <button class="text-left p-2 w-75 float-right"><img src="Pract_8_img/matt_bomer_perfil.jpeg" class="icono mr-2"> Matt Bomer</button>
+                    <button class="text-left p-2 w-75 float-right"><img src="Pract_8_img/hayley_atwell_perfil.jpg" class="icono mr-2"> Hayley Atwell</button>
+                    <button class="text-left p-2 w-75 float-right"><img src="Pract_8_img/juan_esteban_perfil.jpg" class="icono mr-2"> Juan Esteban Aristizábal V</button>
+                    <button class="text-left p-2 w-75 float-right"><img src="Pract_8_img/christian_bale_perfil.jpg" class="icono mr-2"> Christian Bale</button>
+                    <button class="text-left p-2 w-75 float-right"><img src="Pract_8_img/jennifer_aniston_perfil.jpg" class="icono mr-2"> Jennifer Aniston</button>
+                    <button class="text-left p-2 w-75 float-right"><img src="Pract_8_img/vincent_d_onofrio_perfil.jpg" class="icono mr-2"> Vincent D'Onofrio</button>
+                    <button class="text-left p-2 w-75 float-right"><img src="Pract_8_img/jaimie_alexander_perfil.jpg" class="icono mr-2"> Jaimie Alexander</button>
+                    <button class="text-left p-2 w-75 float-right"><img src="Pract_8_img/lauren_german_perfil.jpg" class="icono mr-2"> Lauren German</button>
+                    <button class="text-left p-2 w-75 float-right"><img src="Pract_8_img/drake_bell_perfil.jpg" class="icono mr-2">Drake Bell</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="./bootstrap-4.5.2-dist/js/bootstrap.min.js"></script>
+
+    <script>
+        $('[name="caja"]').click(function (){
+            $('[id="lupa"]').hide();
+            $('[class*="navbar-brand"]').hide();
+            document.getElementById("flecha-izq").style.display = 'block';
+        });
+
+        function clickCuerpo() {
+            document.getElementById("flecha-izq").style.display = 'none';
+            $('[id="lupa"]').show();
+            $('[class*="navbar-brand"]').show();
+        }
+
+        $(function (){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</body>
+</html>
