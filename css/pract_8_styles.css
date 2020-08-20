@@ -1,0 +1,259 @@
+div > button > span {
+    font-size: 0.92em;
+}
+
+.bg-custom {
+    background: rgb(240, 242, 245);
+}
+
+.icono {
+    width: 2.1em;
+    height: 2.1em;
+    border-radius: 50%;
+}
+
+.icono_cuadrado {
+    width: 2.1em;
+    height: 2.1em;
+}
+
+.icono_publicacion {
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    margin-right: 0.4em;
+}
+
+.busqueda {
+    background-color: rgb(240, 242, 245);
+    border: none;
+    width: 15em;
+    border-radius: 2em;
+    display: 
+}
+
+.busqueda:active, .busqueda:focus, .busqueda:hover {
+    outline: none;
+}
+
+.cont-busqueda {
+    background-color: rgb(240, 242, 245);
+    padding: 0em 0.8em;
+    border-radius: 2em;
+}
+
+.navbar {
+    height: 3.75em;
+}
+
+.menu_icons {
+    display: flex;
+    font-size: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu_icons i {
+    padding: 0.6em 2em;
+    margin: 0.2em;
+    border-radius: 0.4em;
+    cursor: pointer;
+}
+
+.menu_icons i:hover, .btn_account:hover {
+    background-color: rgb(240, 242, 245);
+}
+
+.btn_account {
+    background-color: white;
+    border: none;
+    border-radius: 2em;
+    padding: 0.5em;
+    margin: 0.15em;
+}
+
+.btn_account:focus, .btn_account:active {
+    outline: none;
+}
+
+.btn_icon {
+    background-color: rgb(228, 230, 235);
+    border: none;
+    border-radius: 50%;
+    padding: 0.8em;
+    padding: 0;
+    margin-right: 0.15em;
+    width: 2.6em;
+    height: 2.6em;
+}
+
+.btn_icon:hover {
+    background-color: rgb(216, 218, 223);
+}
+
+.btn_icon:active, .btn_icon:focus {
+    outline: none;
+    background-color: rgb(231, 243, 255);
+    color: blue;
+}
+
+.btn_icon:active:hover, .btn_icon:focus:hover {
+    background-color: rgb(218, 230, 241);
+}
+
+.tooltip .tooltip-inner {
+   opacity: 0.8;
+}
+
+.tooltip .arrow:before {
+    display: none;
+}
+
+.font-secciones {
+    font-size: 17px;
+    color: gray;
+    font-weight: bold;
+}
+
+#flecha-izq {
+    display: none;
+}
+
+#columna_izq, #columna_der {
+    top: 3.75em;
+    position: fixed;
+    z-index: 1;
+}
+
+#columna_izq button, #columna_der button {
+    border-radius: 0.5em;
+    background-color: transparent;
+    border: none;
+}
+
+#columna_izq button:focus, #columna_izq button:active, #columna_der button:focus, #columna_der:active {
+    outline: none;
+}
+
+#columna_izq button:hover, #columna_der button:hover {
+    background-color: rgb(228, 230, 233);
+}
+
+#columna_der::-webkit-scrollbar {
+    width: 8px;
+}
+
+#columna_der:hover::-webkit-scrollbar-thumb {
+    background-color: rgb(188, 192, 196);
+}
+
+#columna_der::-webkit-scrollbar-track:hover {
+    background-color: lightblue;
+}
+
+#verMas {
+    background-color: rgb(228, 230, 235);
+    color: rgb(96, 103, 112);
+    border-radius: 50%;
+    padding: 0.6em 0.65em;
+    text-decoration: none;
+}
+
+#columna_izq button:hover a {
+    background-color: rgb(216, 218, 223);
+}
+
+#historias .card {
+    border: none;
+    margin-right: 0.52em;
+}
+
+#historias img {
+    border-radius: 0.7em;
+    padding: 0px;
+}
+
+#historias .card span {
+    position: absolute;
+    bottom: 8px;
+    left: 12px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#historias .card .icono_historia {
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    border: rgb(24, 118, 242) solid 0.25em;
+}
+
+#publicar {
+    border-radius: 0.5em;
+}
+
+#publicar input {
+    background-color: rgb(240, 242, 245);
+    border: none;
+    border-radius: 1em;
+    font-size: 1.1em;
+}
+
+#publicar button {
+    border: none;
+    background-color: transparent;
+    padding: 0.5em;
+}
+
+#publicar i {
+    position: relative;
+    top: 0.1em;
+    margin-right: 0.2em;
+    font-size: 1.3em;
+}
+
+#publicar button:hover, .card-body button:hover {
+    background-color: rgb(242, 242, 242);
+}
+
+#publicar button:active, #publicar button:focus, .card-body button:active, .card-body button:focus {
+    outline: none;
+}
+
+div .card {
+    border: none;
+    border-radius: 0.5;
+    margin-bottom: 1.1em;
+}
+
+.card-body button {
+    border: none;
+    background-color: transparent;
+    border-radius: 0.3em;
+    padding: 0.15em;
+    padding-bottom: 0.3em;
+    color: rgb(80, 80, 80);
+}
+
+.card-body hr {
+    margin-top: 0.3em;
+    margin-bottom: 0.5em;
+    background-color: rgb(206, 208, 212);
+}
+
+.card-body input {
+    border: none;
+    background-color: rgb(240, 242, 245);
+    border-radius: 1em; 
+    padding: 0.4em 0.7em;
+}
+
+.card-body input:active, .card-body input:focus {
+    outline: none;
+    background-color: lightcyan;
+}
+
+.card-img-top {
+    cursor: pointer;
+}
